@@ -99,7 +99,6 @@ func part2() {
 		lines[counter] = fileScanner2.Text()
 		counter++
 	}
-	println(lines)
 	for i := 0; i < numLines; i += 3 {
 		hasRun := false
 		for _, s := range lines[i] {
