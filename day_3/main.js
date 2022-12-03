@@ -8,8 +8,7 @@ const part2 = () => {
   const strArr = file.split(/\r?\n/).map((line) => line);
   for (let i = 0; i < strArr.length; i += 3) {
     let hasRun = false;
-    Array.from(strArr[i]).forEach((s) => {
-      console.log(s);
+    strArr[i].split("").forEach((s) => {
       if (
         hasRun == false &&
         strArr[i + 1].includes(s) &&
