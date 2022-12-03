@@ -1,0 +1,19 @@
+{
+  "name": "advent_22",
+  "version": "1.0.0",
+  "description": "Learning golang with Advent of Code 2022",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/N-Argyle/advent_22_go.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/N-Argyle/advent_22_go/issues"
+  },
+  "homepage": "https://github.com/N-Argyle/advent_22_go#readme"
+}
