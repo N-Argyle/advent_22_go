@@ -43,14 +43,23 @@ func part1() {
 	for fileScanner.Scan() {
 		elf := scoreMap[fileScanner.Text()[0:1]]
 		mine := scoreMap[fileScanner.Text()[2:3]]
+		print(fileScanner.Text()[0:1])
+		print(elf)
+		print(" ")
 		score += mine
 		if mine == elf {
+			print("== ")
 			score += 3
 		}
 		if mine > elf {
+			print("< ")
 			score += 6
 		}
-		println(mine)
+		print(fileScanner.Text()[2:3])
+		print(mine)
+		print(" = ")
+		print(score)
+		print("\n")
 	}
 	println(score)
 	fileScanner.Close()
