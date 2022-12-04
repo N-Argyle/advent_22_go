@@ -8,9 +8,6 @@ import (
 	"strconv"
 )
 
-// create map of all letters in alphabet corresponding to numbers
-// get shared number for each line and add to sum
-
 var file string = "input.txt"
 
 func check(e error) {
@@ -32,10 +29,9 @@ func createScanner(file string) *FileScanner {
 	return &FileScanner{readFile, fileScanner}
 }
 
-func part1() {
+func generateLines() ([][]int, int) {
 	fileScanner := createScanner(file)
 	fileScanner2 := createScanner(file)
-	score := 0
 	numLines := 0
 	for fileScanner.Scan() {
 		numLines++
@@ -57,6 +53,12 @@ func part1() {
 		lines[counter][3] = val3
 		counter++
 	}
+	return lines, numLines
+}
+
+func part1() {
+	score := 0
+	lines, numLines := generateLines()
 	for i := 0; i < numLines; i++ {
 		AA := lines[i][0]
 		AB := lines[i][1]
@@ -70,30 +72,8 @@ func part1() {
 }
 
 func part2() {
-	fileScanner := createScanner(file)
-	fileScanner2 := createScanner(file)
 	score := 0
-	numLines := 0
-	for fileScanner.Scan() {
-		numLines++
-	}
-	lines := make([][]int, numLines)
-	counter := 0
-	for fileScanner2.Scan() {
-		zp := regexp.MustCompile(`\,|-`)
-		strSlice := zp.Split(fileScanner2.Text(), -1)
-		val0, err := strconv.Atoi(strSlice[0])
-		val1, err := strconv.Atoi(strSlice[1])
-		val2, err := strconv.Atoi(strSlice[2])
-		val3, err := strconv.Atoi(strSlice[3])
-		check(err)
-		lines[counter] = make([]int, 4)
-		lines[counter][0] = val0
-		lines[counter][1] = val1
-		lines[counter][2] = val2
-		lines[counter][3] = val3
-		counter++
-	}
+	lines, numLines := generateLines()
 	for i := 0; i < numLines; i++ {
 		AA := lines[i][0]
 		AB := lines[i][1]
