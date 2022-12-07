@@ -1,3 +1,2 @@
 # advent_22_go
-Learning golang with Advent of Code 2022
-Also including some JS solutions
+Started doing this with Go, was taking too long, switched to js
